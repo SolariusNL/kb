@@ -1,0 +1,47 @@
+import create from "@/images/infra-create.png";
+import { Layout } from "@/layout";
+import { Center, Image } from "@mantine/core";
+
+export const meta = {
+  title: "Creating a user account in Infra",
+  description: "Learn how to create a new Linux user account through Infra",
+  slug: "infra-create-user",
+  category: "infra",
+  tags: ["infra", "linux", "user", "account", "create"],
+  created_at: "February 22, 2024",
+  last_updated_at: "February 22, 2024",
+};
+
+export default Layout(meta);
+
+Infra allows you to create new user accounts on your Linux machines managed by Infra. This guide will walk you through the process of creating a new user account.
+
+## Prerequisites
+
+Before you begin, you'll need to have the following:
+
+- An Infra instance with at least one server
+- Administrative access to Infra and the server you want to create a user account on
+
+## Create a new user account
+
+1. Navigate to the server you want to create a user account on.
+2. In the sidebar, click on the "Accounts" tab.
+3. Click on the blue "Create new account" button.
+4. Fill in the form with the following information:
+   - **Full name**: The full name of the user, e.g. "John Doe"
+   - **User name**: The username for the new account, e.g. "johndoe"
+   - **Home directory**: The location of the user's home directory, e.g. "/home/johndoe". This field is optional, and if left blank, Infra will automatically generate a home directory for the user.
+   - **Shell**: The user's default shell, e.g. "/bin/bash"
+   - **User ID**: The user's unique identifier, e.g. "1001". This field is optional, and if left blank, Infra will automatically generate a user ID for the user.
+   - **Authentication**: The user's authentication method.
+   - **Password**: The user's password.
+   - **Confirm password**: Confirm the user's password for accuracy.
+
+<Center>
+  <Image src={create.src} alt="Create new account" />
+</Center>
+
+5. Click the "Create" button to create the new user account.
+
+And that's it! You've successfully created a new user account through Infra. You can now log in to the server using the new user account.

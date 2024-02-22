@@ -1,0 +1,24 @@
+name: Website issue
+description: Report an issue with help.mantine.dev website
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue with help.mantine.dev website!
+        Please fill out the following information to help us resolve it.
+  - type: input
+    id: article
+    attributes:
+      label: Url of the page with the issue
+      description: Url of the page you are reporting an issue with
+      placeholder: https://help.mantine.dev/q/article-slug
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue description
+      description: Please provide as much details as possible
+      placeholder: Issue description
+    validations:
+      required: true

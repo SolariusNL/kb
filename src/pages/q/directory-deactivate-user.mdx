@@ -1,0 +1,51 @@
+import deactivate from "@/images/directory-deactivate.png";
+import sidebar from "@/images/directory-sidebar.png";
+import { Layout } from "@/layout";
+import { Center, Image } from "@mantine/core";
+
+export const meta = {
+  title: "Deactivating a user in Directory",
+  description:
+    "Learn how to deactivate a user in the Directory to prevent further access to your company's resources.",
+  slug: "directory-deactivate-user",
+  category: "directory",
+  tags: ["directory", "it", "user", "deactivate"],
+  created_at: "February 22, 2024",
+  last_updated_at: "February 22, 2024",
+};
+
+export default Layout(meta);
+
+Directory management is a critical part of IT administration. It's important to keep your company's directory up to date and secure. One of the tasks that you may need to perform is deactivating a user. This is especially important when an employee leaves the company or when you need to prevent a user from accessing your company's resources for any reason.
+
+In this guide, we'll walk you through the steps to deactivate a user in the Directory.
+
+## Deactivating a user
+
+To deactivate a user in the Directory, follow these steps:
+
+1. **Sign in to your Directory instance**: Go to the Directory sign-in page and sign in with your administrator account.
+2. **Navigate to the user list**: Once you're signed in, navigate to the user list. You should see a list of all the users in your Directory.
+
+<Center>
+  <Image src={sidebar.src} alt="Directory sidebar" maw={350} />
+</Center>
+
+3. **Find the user you want to deactivate**: Scroll through the user list to find the user you want to deactivate. You can use the search bar to find the user more quickly.
+4. **Deactivate the user**: Once you've found the user, click on their name to open their profile. Look for the "Deactivate" button and click on it, and confirm that you want to deactivate the user.
+
+<Center>
+  <Image src={deactivate.src} alt="Deactivate user" maw={350} />
+</Center>
+
+## What happens when you deactivate a user
+
+When you deactivate a user in the Directory, the following happens:
+
+- The user's account is disabled, and they can no longer sign in to the Directory, authenticate with OAuth, SAML, or any other method.
+- When the user tries to sign in, they'll see an error message indicating that their account has been deactivated.
+- The user's access to your company's resources is revoked. They will no longer be able to access any of the resources that they had access to before, as long as those resources are protected by Directory.
+
+## Reactivating a user
+
+Perform the same steps, but instead of clicking "Deactivate", click "Activate" to reactivate the user. The user will be able to sign in and access your company's resources again.

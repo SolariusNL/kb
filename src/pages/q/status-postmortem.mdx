@@ -1,0 +1,47 @@
+import { Layout } from "@/layout";
+
+export const meta = {
+  title: "Writing a postmortem in Status",
+  description:
+    "Learn how to publish a postmortem in Status to share with your team",
+  slug: "status-postmortem",
+  category: "status",
+  tags: ["status", "postmortem", "incident management"],
+  created_at: "February 22, 2024",
+  last_updated_at: "February 22, 2024",
+};
+
+export default Layout(meta);
+
+Postmortems are a critical part of incident management. They help teams learn from past incidents and prevent them from happening again. In Status, you can publish a postmortem to share with your team.
+
+## Prerequisites
+
+You need to have a Status account subscribed to the Business plan to publish a postmortem. The Business plan starts at $1.99 per user per month.
+
+## Steps
+
+1. Open the Status app and sign in to your account.
+2. Go to your incident dashboard.
+3. Click on the incident for which you want to publish a postmortem.
+4. Click on the **Postmortem** tab.
+5. Click on the **Create Postmortem** button.
+6. Fill in the details of the postmortem, such as the title, description, and root cause analysis.
+7. Click on the **Publish** button to publish the postmortem.
+
+That's it! You have successfully published a postmortem in Status. Your team can now access the postmortem and learn from the incident.
+
+## API reference
+
+If you'd like to access postmortem data programmatically through the Status API, you can use the following endpoints:
+
+- `GET /api/postmortems`: Get a list of all postmortems.
+- `GET /api/postmortems/{id}`: Get a specific postmortem by ID.
+- `GET /api/incidents/{incident_id}/postmortem`: Get the postmortem for a specific incident.
+- `POST /api/incidents/{incident_id}/postmortem`: Create a postmortem for a specific incident.
+- `PUT /api/postmortems/{id}`: Update a specific postmortem by ID.
+- `DELETE /api/postmortems/{id}`: Delete a specific postmortem by ID.
+
+## Conclusion
+
+Publishing a postmortem in Status is a great way to share incident learnings with your team. This helps prevent future incidents and improve your incident management process.

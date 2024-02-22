@@ -1,0 +1,46 @@
+import { Layout } from "@/layout";
+
+export const meta = {
+  title: "Restoring original IP address after proxy",
+  description: "Learn how to restore original IP address with Udmux",
+  slug: "udmux-restore-ip",
+  category: "udmux",
+  tags: ["udmux", "ddos", "ip", "proxy"],
+  created_at: "February 22, 2024",
+  last_updated_at: "February 22, 2024",
+};
+
+export default Layout(meta);
+
+When your services traffic is routed through Solarius's Udmux network, we act as a reverse proxy. This allows us to route packets efficiently and cache static resources that are frequently requested. As a result, when responding to requests and logging them, your server will see the IP address of the Udmux server that the request was received on, rather than the original client's IP address.
+
+## Restoring original IP address
+
+To restore the original IP address of the client, you can pull the `Ud-Client-IP` header from the request. This header is added by Udmux and contains the original client's IP address.
+
+Here's an example of how you can do this in Node.js using the `express` framework:
+
+```javascript
+const express = require("express");
+const app = express();
+
+app.use((req, res, next) => {
+  const clientIp = req.headers["ud-client-ip"];
+  console.log(`Request from client with IP: ${clientIp}`);
+  next();
+});
+
+app.get("/", (req, res) => {
+  res.send("Hello, world!");
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
+```
+
+In this example, we're using the `express` middleware to pull the `Ud-Client-IP` header from the request and log it to the console. You can then use this IP address for any other purposes, such as logging or rate limiting.
+
+## Limitations
+
+It's important to note that the `Ud-Client-IP` header is only added to requests that are routed through Udmux. If a request bypasses Udmux and is sent directly to your server, the header will not be present. As a result, you should always check for the presence of the header before using it, and have a fallback mechanism in place for when it's not present.
